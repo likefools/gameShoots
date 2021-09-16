@@ -16,7 +16,7 @@ mytarget();
 // class name '1' = img  
 const mySet = new Set();
 
-var myTimer = setInterval(myTimer, 500);
+var myTimer = setInterval(myTimer, 1000);
 
 let i = 0;
 function myTimer(){
