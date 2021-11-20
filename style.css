@@ -18,6 +18,7 @@ h3{
 }
 
 .container{
+    
     padding: 20px;
 }
 
@@ -26,12 +27,35 @@ img{
     height: 100px;
 }
 
+.buttons{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+  grid-gap: 20px;
+}
+.btn{
+  padding: 10px 20px;
+  font-size: 16pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.start{
+  background-color: rgb(96, 219, 96);
+}
+.stop{
+  background-color: rgb(219, 96, 96);
+}
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(10, auto);
+    justify-content: space-between;
+    grid-template-columns: repeat(5, auto);
   }
   .grid-item {
-    margin: 10px 5px;
+    margin: 20px 0;
     height: 100px;
     width: 100px;
     background-color: #666;
