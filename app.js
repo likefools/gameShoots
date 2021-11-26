@@ -6,54 +6,47 @@ var start = false;
 const memo = new Map([]);
 // מריץ מספר רוביעים ומכניס להם תמונה מוסתרת
 function mytarget(){
-    // לאוסיף אנימציה של שניה לכל ריבוע
     for (let i=0;i <numOfItem; i++) {
-        
         let gridItem = $("<div class=\"grid-item target"+i+"\"></div>");
+        // לאוסיף אנימציה של שניה לכל ריבוע
         $(".grid-container").append(gridItem);
+        // the img
         let target = '<img src="imges/targetl.png" alt="targetl"></img>';
-        
         $('.target'+i).prepend(target);
         // memo[i] =$('.target'+i+ ' img').hide();
         memo.set(i, $('.target'+i+ ' img').hide());
     }
-    console.log(memo.size);
-    // let j = Math.floor(Math.random() * 10);
-    // let target = '<img src="imges/targetl.png" alt="targetl"></img>';
-    //     $('.'+j).prepend(target);
+    // console.log(memo.size);
 }
 mytarget();
 
-
-// class name '1' = img
 $('.start').click(function(){
-    // alert("hi");
     if (start != true) {
         myTimer = setInterval(myTimer, 500);
         start = true;
     }
 });
-
 $('.stop').click(function(){
-    // alert("hi");
     if (start == true) {
         myStopFunction();
     }
-})
+});
 
 // const mySet = new Set();
-
-for (let role of memo.values()) {
-    console.log(role);
+var list = [];
+for (let [key,val] of memo.entries()) {
+    const random = Math.floor(Math.random() * memo.size);
+    memo.set(random, $('.target'+random+ ' img').show());
+    // console.log(val);
+    if (val.is(":hidden")){
+        console.log(key);
+        list += [`${key}`];
+    }
 }
+console.log(list);
 
-// if (memo.values == $('.target'+random+ ' img').show()){
-//     console.log("show");
-// }
-
-const random = Math.floor(Math.random() * memo.size);
-
-memo.set(random, $('.target'+random+ ' img').show());
+// const random = Math.floor(Math.random() * memo.size);
+// memo.set(random, $('.target'+random+ ' img').show());
 
 
 let i = 0;
