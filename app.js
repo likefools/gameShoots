@@ -50,7 +50,7 @@ for (let role of memo.values()) {
 // if (memo.values == $('.target'+random+ ' img').show()){
 //     console.log("show");
 // }
-for ( i=0; i > 10; )
+
 const random = Math.floor(Math.random() * memo.size);
 
 memo.set(random, $('.target'+random+ ' img').show());
