@@ -10,7 +10,7 @@ const startTarget = (numOfItem) => {
         $('.target'+i+ ' img').hide();
     }
 };
-startTarget(10);
+startTarget(5);
 // ----------- endTarget --------------
 
 
@@ -18,7 +18,7 @@ startTarget(10);
 const targetGenericity  = (numOfItem) => {
     let targetImg = [];
     for(let i=0; i < numOfItem; i++){
-            targetImg[i] = [i,$('.target'+i+ ' img').hide()];
+        targetImg[i] = [i,$('.target'+i+ ' img').hide()];
     }
     return targetImg;
 }
@@ -41,16 +41,17 @@ const checkHor = (_targetG) => {
     console.log('randomItem '+randomItem, targetG[randomWondow[randomItem]][0]);
     $(targetG[randomWondow[randomItem]][1]).show();
     
-    setTimeout(hideImg, 1000);
+    setTimeout(hideImg, 2000);
     function hideImg(){
         if ($(targetG[randomWondow[randomItem]][1]).is(':visible')) { // '.1 > img'
             $(targetG[randomWondow[randomItem]][1]).hide();
         }
     }
+    console.log(randomWondow);
     return randomWondow;
 }
 
-for(let i = 300; i <= 10000;i += 300){
+for(let i = 300; i <= 10000;i += 500){
     setTimeout(checkHor, i);
 }
 
